@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Database - Welcome </title>
+    <style>
+        h1 {
+            color: #4a4e69; /* Dark blue-gray */
+        }
+
+        h2 {
+            color: #22223b; /* Deep purple */
+        }
+
+        #book-types h3 {
+            color: #6b705c; /* Olive green */
+        }
+
+        #about h2 {
+            color: #9a8c98; /* Muted purple */
+        }
+
+        #search h2 {
+            color: #4a5759; /* Slate gray */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kütüphane Sayfamıza Hoş Geldiniz !!</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Hakkında</a></li>
+                <li><a href="#book-types">Kitap Türleri</a></li>
+                <li><a href="#search">Ara</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br/>
+    <div style="display: inline-block; margin-right: 10px;">
+        <img src="/LandingPage/KutuphaneFoto.jpg"
+             
+             alt="Kütüphane Fotoğrafı"
+             style="max-width: 1000px; max-height: 200px;" />
+    </div>
+    <div style="display: inline-block;">
+        <img src="---" @* /* it is a place for adding photo of library's name*/ *@ '"
+             alt="---- Fotoğrafı"
+             style="max-width: 800px; max-height: 200px;" />
+    </div>
+    <br />
+    <br />
+    <main>
+        <section id="about">
+            <h2>Kütüphanemiz Hakkında:</h2>
+            <p> 
+                <br />
+                    <h4>Technocast Kütüphane: Bilgi ve İnovasyonun Merkezi</h4>
+                        <br />
+                        <br />
+                            Technocast, teknoloji ve inovasyonun öncüsü olarak, bilgiye erişimi kolaylaştırmak ve öğrenme deneyimini zenginleştirmek amacıyla modern bir kütüphane veritabanı sunmaktadır. Kütüphanemiz, geniş bir dijital kaynak yelpazesi ile kullanıcılara en güncel ve kapsamlı bilgileri sunar.
+                        <br />
+                        <br />
+                    <h5>Yenilikçi ve Kullanıcı Dostu</h5>
+                        <br />
+                            Web sitemiz, .NET teknolojisi kullanılarak geliştirilmiş olup, kullanıcı dostu arayüzü sayesinde bilgiye hızlı ve kolay erişim sağlar. Modern tasarımı ve kullanıcı odaklı özellikleri ile aradığınız bilgilere en kısa sürede ulaşabilirsiniz.
+                        <br />
+                        <br />  
+                    <h5>Misyonumuz</h5>
+                        <br />
+                            Misyonumuz, bilgiye erişim ve öğrenme süreçlerini daha verimli hale getirmektir. Teknolojiyi en iyi şekilde kullanarak, araştırmacılardan öğrenciler ve profesyonellere kadar geniş bir kullanıcı kitlesine hizmet vermeyi hedefliyoruz. Her geçen gün gelişen kütüphane koleksiyonumuz ve sürekli güncellenen içeriklerimiz ile bilgiye olan açlığınızı tatmin etmek için buradayız.
+                        <br />
+                        <br />
+                    <h5>Vizyonumuz</h5>
+                        <br />
+                            Vizyonumuz, teknoloji ve bilgi dünyasında lider bir kaynak merkezi olmaktır. Sürekli yenilenen altyapımız ve kapsamlı veri tabanımız ile geleceğin bilgi toplama ve öğrenme alışkanlıklarına öncülük etmek, ve kullanıcılarımıza en iyi deneyimi sunmaktır..
+                        <br />
+                        <br />
+                <br />
+            </p>  
+            <br />
+            <br />
+        </section>
+        <section id="book-types">
+            <h2>Kitap Koleksiyonumuz: </h2>
+            <br />
+            <div class="book-type">
+                <h3>Çizgi Roman</h3>
+                <p>Çizgi romanlar, eğlenceli ve ilham verici bir okuma deneyimi sunar. Görsel anlatım ve yaratıcı hikayelerin birleşimiyle sanatsal bir ifade biçimi olarak öne çıkar. Eğlenceli ve keşfetmeye değer bir okuma deneyimi arıyorsanız, çizgi romanları mutlaka keşfetmelisiniz..</p>
+            </div>
+            <div class="book-type">
+                <h3>Roman</h3>
+                <p>Romanlar, derinlemesine hikayeler ve zengin karakterler sunarak okuma deneyimini zenginleştirir. Sanatsal anlatım ve yaratıcı kurgularıyla, okuyuculara unutulmaz ve düşündürücü bir deneyim yaşatır. Eğlenceli ve ilham verici bir okuma arıyorsanız, romanlar sizin için mükemmel bir seçim olabilir..</p>
+            </div>
+            <div class="book-type">
+                <h3>Şiir Kitapları</h3>
+                <p>Şiir kitapları, duyguların ve yaratıcı düşüncelerin en saf ve estetik ifade biçimidir. Her bir şiir, okuyuculara derin bir düşünce ve hissiyat deneyimi sunar. Duygusal ve yaratıcı bir okuma arıyorsanız, şiir kitapları size ilham ve huzur verebilir..</p>
+            </div>
+            <br />
+            <br />
+        </section>
+        <section id="search">
+            <h2>Veritabanında Araştır</h2>
+            <p>Spesifik bir kitaba mı bakyorsun? Bu kısımdan kolayca ulaşabilirsin.</p>
+            <form method="post">
+                <label for="categoryname">Ara:</label>
+                <input type="text" required id="categoryname" name="categoryname" placeholder="Kitap ismi veya yazar adı girin" />
+
+                <button type="submit" asp-action="DetailsByCategory" asp-controller="Products">Ara</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Library Database. All rights reserved.</p>
+    </footer>
+</body>
+</html>

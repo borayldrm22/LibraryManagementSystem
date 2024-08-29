@@ -1,0 +1,86 @@
+﻿@model Kutuphane2.Models.Product
+
+@{
+    ViewData["Title"] = "Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Silme Onayı</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h3 class="card-title text-center">Bu ürünü silmek istediğinizden emin misiniz?</h3>
+            <hr />
+
+            <div class="mb-4">
+                <h4>Ürün Bilgileri</h4>
+                <dl class="row">
+                    <dt class="col-sm-3 font-weight-bold">
+                        İsim
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+                    <dt class="col-sm-3 font-weight-bold">
+                       Marka
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Brand)
+                    </dd>
+
+                    <dt class="col-sm-3 font-weight-bold">
+                       Kategori
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Category)
+                    </dd>
+
+                    <dt class="col-sm-3 font-weight-bold">
+                        Fiyat
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Price)
+                    </dd>
+
+                    <dt class="col-sm-3 font-weight-bold">
+                        Kitap Bilgisi
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+
+                    <dt class="col-sm-3 font-weight-bold">
+                        Eklenme Tarihi
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.CreatedAt)
+                    </dd>
+                </dl>
+            </div>
+
+            <!-- Onay Kutusu -->
+            <div class="form-group">
+                <input type="checkbox" id="confirmDelete" required>
+                <label for="confirmDelete">Silme işlemini onaylıyorum.</label>
+            </div>
+
+            <form id="deleteForm" asp-action="Delete" class="text-center">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger" disabled id="deleteButton">Sil</button>
+                <a asp-action="Index" class="btn btn-secondary ml-2">Listeye Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // JavaScript to enable the delete button when the checkbox is checked
+        document.getElementById('confirmDelete').addEventListener('change', function () {
+            var button = document.getElementById('deleteButton');
+            button.disabled = !this.checked;
+        });
+    </script>
+}

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Kutuphane2.Models.Product>
+@{
+    ViewData["Title"] = "İçerik";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>İçerik</h1>
+<p>
+    <a class="btn btn-primary" asp-action="Create">Yeni Kitap Ekle</a>
+</p>
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fotoğraf</th>
+                <th>Kitap Adı</th>
+                <th>Kitap Türü</th>
+                <th>Fiyat</th>
+                <th>Kitap Bilgisi</th>
+                <th>Oluşturulma Tarihi</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.ImageFileName))
+                        {
+                            <a href="~/productimages/@item.ImageFileName" target="_blank">
+                                <img src="~/productimages/@item.ImageFileName" alt="@item.Name" class="product-image" />
+                            </a>
+                        }
+                        else
+                        {
+                            <span class="no-image">Resim mevcut değil</span>
+                        }
+                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@item.CreatedAt.Date.ToString("dd.MM.yyyy")</td>
+                    <td>
+                        <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
+                        <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detaylar</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Kaldır</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

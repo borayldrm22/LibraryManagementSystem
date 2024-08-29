@@ -1,0 +1,116 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Genel Tablo Stili */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+    .table th, .table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table th {
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+/* Resim Stili */
+.product-image {
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 8px;
+}
+
+/* Placeholder Resim */
+.no-image {
+    display: block;
+    padding: 8px;
+    color: #777;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Buton Stili */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 2px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Tablo Konteyneri */
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+
+<style>
+    .form-control {
+        background-color: #f8f9fa; /* Light grey background */
+        border: 1px solid #ced4da; /* Border color */
+    }
+    .form-group label {
+        background-color: #e9ecef; /* Slightly darker grey for labels */
+        padding: 5px;
+    }
+</style >
+
+
+
+

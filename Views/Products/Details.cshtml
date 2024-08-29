@@ -1,0 +1,66 @@
+﻿@model Kutuphane2.Models.Product
+
+@{
+    ViewData["Title"] = "Ürün Detayları";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Ürün Detayları</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title">Ürün Bilgileri</h4>
+            <hr />
+
+            <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">
+                    İsim
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    Marka
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Brand)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    Kategori
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Category)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    Fiyat
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    Kitap Bilgisi
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    Eklenme Tarihi
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.CreatedAt)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Düzenle</a>
+        <a asp-action="Index" class="btn btn-secondary ml-2">Listeye Dön</a>
+    </div>
+</div>

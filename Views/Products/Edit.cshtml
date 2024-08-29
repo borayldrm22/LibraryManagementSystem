@@ -1,0 +1,74 @@
+﻿@model Kutuphane2.Models.Product
+
+@{
+    ViewData["Title"] = "Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Ürünü Düzenle</h1>
+
+<h4 class="text-center">Ürün Bilgilerini Güncelle</h4>
+<hr />
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <input type="hidden" asp-for="Id" />
+
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Ürün Adı</label>
+                    <input asp-for="Name" class="form-control bg-light" placeholder="Ürün adını girin" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Brand" class="control-label">Marka</label>
+                    <input asp-for="Brand" class="form-control bg-light" placeholder="Marka adını girin" />
+                    <span asp-validation-for="Brand" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Category" class="control-label">Kategori</label>
+                    <input asp-for="Category" class="form-control bg-light" placeholder="Ürün kategorisini girin" />
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label">Fiyat</label>
+                    <input asp-for="Price" class="form-control bg-light" placeholder="Fiyatı girin" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Açıklama</label>
+                    <textarea asp-for="Description" class="form-control bg-light" placeholder="Açıklama girin"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CreatedAt" class="control-label">Oluşturulma Tarihi</label>
+                    <input asp-for="CreatedAt" class="form-control bg-light" readonly />
+                    <span asp-validation-for="CreatedAt" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <input type="submit" value="Kaydet" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
